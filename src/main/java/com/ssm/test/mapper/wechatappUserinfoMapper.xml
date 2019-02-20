@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.test.dao.wechatappUserinfoMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.test.model.wechatappUserinfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="headpicture" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sex" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="mobile" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="address" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="idcard" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="initid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="openid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="communityname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="communitytype" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="communityid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="orgtype" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="orgid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="orgpath" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="orgname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="state" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="imgurl" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="Def4" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="unionid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="hobby" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="hobbygroup" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="peoplestate" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="stategroup" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="realname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createtime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="istuser" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="apptype" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="serverip" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="servername" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="point" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="serverid" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="signature" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="positions" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="wxaqrcode" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="first_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="postid" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="create_user_community_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="create_user_community_type" javaType="java.lang.Long" jdbcType="BIGINT" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, headpicture, username, sex, mobile, address, idcard, initid, openid, communityname, 
+    communitytype, communityid, orgtype, orgid, orgpath, orgname, state, imgurl, password, 
+    Def4, unionid, hobby, hobbygroup, peoplestate, stategroup, realname, createtime, 
+    istuser, apptype, serverip, servername, point, serverid, signature, positions, wxaqrcode, 
+    first_name, postid, create_user_community_id, create_user_community_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wechatapp_userinfo
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from wechatapp_userinfo
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ssm.test.model.wechatappUserinfo">
+    insert into wechatapp_userinfo (id, headpicture, username, 
+      sex, mobile, address, 
+      idcard, initid, openid, 
+      communityname, communitytype, communityid, 
+      orgtype, orgid, orgpath, 
+      orgname, state, imgurl, 
+      password, Def4, unionid, 
+      hobby, hobbygroup, peoplestate, 
+      stategroup, realname, createtime, 
+      istuser, apptype, serverip, 
+      servername, point, serverid, 
+      signature, positions, wxaqrcode, 
+      first_name, postid, create_user_community_id, 
+      create_user_community_type)
+    values (#{id,jdbcType=BIGINT}, #{headpicture,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{idcard,jdbcType=VARCHAR}, #{initid,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, 
+      #{communityname,jdbcType=VARCHAR}, #{communitytype,jdbcType=VARCHAR}, #{communityid,jdbcType=VARCHAR}, 
+      #{orgtype,jdbcType=VARCHAR}, #{orgid,jdbcType=VARCHAR}, #{orgpath,jdbcType=VARCHAR}, 
+      #{orgname,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{imgurl,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{def4,jdbcType=VARCHAR}, #{unionid,jdbcType=VARCHAR}, 
+      #{hobby,jdbcType=VARCHAR}, #{hobbygroup,jdbcType=VARCHAR}, #{peoplestate,jdbcType=VARCHAR}, 
+      #{stategroup,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
+      #{istuser,jdbcType=INTEGER}, #{apptype,jdbcType=VARCHAR}, #{serverip,jdbcType=VARCHAR}, 
+      #{servername,jdbcType=VARCHAR}, #{point,jdbcType=INTEGER}, #{serverid,jdbcType=BIGINT}, 
+      #{signature,jdbcType=VARCHAR}, #{positions,jdbcType=VARCHAR}, #{wxaqrcode,jdbcType=VARCHAR}, 
+      #{firstName,jdbcType=VARCHAR}, #{postid,jdbcType=BIGINT}, #{createUserCommunityId,jdbcType=BIGINT}, 
+      #{createUserCommunityType,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.test.model.wechatappUserinfo">
+    insert into wechatapp_userinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="headpicture != null">
+        headpicture,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="idcard != null">
+        idcard,
+      </if>
+      <if test="initid != null">
+        initid,
+      </if>
+      <if test="openid != null">
+        openid,
+      </if>
+      <if test="communityname != null">
+        communityname,
+      </if>
+      <if test="communitytype != null">
+        communitytype,
+      </if>
+      <if test="communityid != null">
+        communityid,
+      </if>
+      <if test="orgtype != null">
+        orgtype,
+      </if>
+      <if test="orgid != null">
+        orgid,
+      </if>
+      <if test="orgpath != null">
+        orgpath,
+      </if>
+      <if test="orgname != null">
+        orgname,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="imgurl != null">
+        imgurl,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="def4 != null">
+        Def4,
+      </if>
+      <if test="unionid != null">
+        unionid,
+      </if>
+      <if test="hobby != null">
+        hobby,
+      </if>
+      <if test="hobbygroup != null">
+        hobbygroup,
+      </if>
+      <if test="peoplestate != null">
+        peoplestate,
+      </if>
+      <if test="stategroup != null">
+        stategroup,
+      </if>
+      <if test="realname != null">
+        realname,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="istuser != null">
+        istuser,
+      </if>
+      <if test="apptype != null">
+        apptype,
+      </if>
+      <if test="serverip != null">
+        serverip,
+      </if>
+      <if test="servername != null">
+        servername,
+      </if>
+      <if test="point != null">
+        point,
+      </if>
+      <if test="serverid != null">
+        serverid,
+      </if>
+      <if test="signature != null">
+        signature,
+      </if>
+      <if test="positions != null">
+        positions,
+      </if>
+      <if test="wxaqrcode != null">
+        wxaqrcode,
+      </if>
+      <if test="firstName != null">
+        first_name,
+      </if>
+      <if test="postid != null">
+        postid,
+      </if>
+      <if test="createUserCommunityId != null">
+        create_user_community_id,
+      </if>
+      <if test="createUserCommunityType != null">
+        create_user_community_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="headpicture != null">
+        #{headpicture,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null">
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="initid != null">
+        #{initid,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null">
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="communityname != null">
+        #{communityname,jdbcType=VARCHAR},
+      </if>
+      <if test="communitytype != null">
+        #{communitytype,jdbcType=VARCHAR},
+      </if>
+      <if test="communityid != null">
+        #{communityid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgtype != null">
+        #{orgtype,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null">
+        #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgpath != null">
+        #{orgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="orgname != null">
+        #{orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="imgurl != null">
+        #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="def4 != null">
+        #{def4,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null">
+        #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="hobby != null">
+        #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="hobbygroup != null">
+        #{hobbygroup,jdbcType=VARCHAR},
+      </if>
+      <if test="peoplestate != null">
+        #{peoplestate,jdbcType=VARCHAR},
+      </if>
+      <if test="stategroup != null">
+        #{stategroup,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="istuser != null">
+        #{istuser,jdbcType=INTEGER},
+      </if>
+      <if test="apptype != null">
+        #{apptype,jdbcType=VARCHAR},
+      </if>
+      <if test="serverip != null">
+        #{serverip,jdbcType=VARCHAR},
+      </if>
+      <if test="servername != null">
+        #{servername,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null">
+        #{point,jdbcType=INTEGER},
+      </if>
+      <if test="serverid != null">
+        #{serverid,jdbcType=BIGINT},
+      </if>
+      <if test="signature != null">
+        #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="positions != null">
+        #{positions,jdbcType=VARCHAR},
+      </if>
+      <if test="wxaqrcode != null">
+        #{wxaqrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="firstName != null">
+        #{firstName,jdbcType=VARCHAR},
+      </if>
+      <if test="postid != null">
+        #{postid,jdbcType=BIGINT},
+      </if>
+      <if test="createUserCommunityId != null">
+        #{createUserCommunityId,jdbcType=BIGINT},
+      </if>
+      <if test="createUserCommunityType != null">
+        #{createUserCommunityType,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.test.model.wechatappUserinfo">
+    update wechatapp_userinfo
+    <set>
+      <if test="headpicture != null">
+        headpicture = #{headpicture,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null">
+        idcard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="initid != null">
+        initid = #{initid,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null">
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="communityname != null">
+        communityname = #{communityname,jdbcType=VARCHAR},
+      </if>
+      <if test="communitytype != null">
+        communitytype = #{communitytype,jdbcType=VARCHAR},
+      </if>
+      <if test="communityid != null">
+        communityid = #{communityid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgtype != null">
+        orgtype = #{orgtype,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null">
+        orgid = #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgpath != null">
+        orgpath = #{orgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="orgname != null">
+        orgname = #{orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="imgurl != null">
+        imgurl = #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="def4 != null">
+        Def4 = #{def4,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null">
+        unionid = #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="hobby != null">
+        hobby = #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="hobbygroup != null">
+        hobbygroup = #{hobbygroup,jdbcType=VARCHAR},
+      </if>
+      <if test="peoplestate != null">
+        peoplestate = #{peoplestate,jdbcType=VARCHAR},
+      </if>
+      <if test="stategroup != null">
+        stategroup = #{stategroup,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="istuser != null">
+        istuser = #{istuser,jdbcType=INTEGER},
+      </if>
+      <if test="apptype != null">
+        apptype = #{apptype,jdbcType=VARCHAR},
+      </if>
+      <if test="serverip != null">
+        serverip = #{serverip,jdbcType=VARCHAR},
+      </if>
+      <if test="servername != null">
+        servername = #{servername,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null">
+        point = #{point,jdbcType=INTEGER},
+      </if>
+      <if test="serverid != null">
+        serverid = #{serverid,jdbcType=BIGINT},
+      </if>
+      <if test="signature != null">
+        signature = #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="positions != null">
+        positions = #{positions,jdbcType=VARCHAR},
+      </if>
+      <if test="wxaqrcode != null">
+        wxaqrcode = #{wxaqrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="firstName != null">
+        first_name = #{firstName,jdbcType=VARCHAR},
+      </if>
+      <if test="postid != null">
+        postid = #{postid,jdbcType=BIGINT},
+      </if>
+      <if test="createUserCommunityId != null">
+        create_user_community_id = #{createUserCommunityId,jdbcType=BIGINT},
+      </if>
+      <if test="createUserCommunityType != null">
+        create_user_community_type = #{createUserCommunityType,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.test.model.wechatappUserinfo">
+    update wechatapp_userinfo
+    set headpicture = #{headpicture,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      idcard = #{idcard,jdbcType=VARCHAR},
+      initid = #{initid,jdbcType=VARCHAR},
+      openid = #{openid,jdbcType=VARCHAR},
+      communityname = #{communityname,jdbcType=VARCHAR},
+      communitytype = #{communitytype,jdbcType=VARCHAR},
+      communityid = #{communityid,jdbcType=VARCHAR},
+      orgtype = #{orgtype,jdbcType=VARCHAR},
+      orgid = #{orgid,jdbcType=VARCHAR},
+      orgpath = #{orgpath,jdbcType=VARCHAR},
+      orgname = #{orgname,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      imgurl = #{imgurl,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      Def4 = #{def4,jdbcType=VARCHAR},
+      unionid = #{unionid,jdbcType=VARCHAR},
+      hobby = #{hobby,jdbcType=VARCHAR},
+      hobbygroup = #{hobbygroup,jdbcType=VARCHAR},
+      peoplestate = #{peoplestate,jdbcType=VARCHAR},
+      stategroup = #{stategroup,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=DATE},
+      istuser = #{istuser,jdbcType=INTEGER},
+      apptype = #{apptype,jdbcType=VARCHAR},
+      serverip = #{serverip,jdbcType=VARCHAR},
+      servername = #{servername,jdbcType=VARCHAR},
+      point = #{point,jdbcType=INTEGER},
+      serverid = #{serverid,jdbcType=BIGINT},
+      signature = #{signature,jdbcType=VARCHAR},
+      positions = #{positions,jdbcType=VARCHAR},
+      wxaqrcode = #{wxaqrcode,jdbcType=VARCHAR},
+      first_name = #{firstName,jdbcType=VARCHAR},
+      postid = #{postid,jdbcType=BIGINT},
+      create_user_community_id = #{createUserCommunityId,jdbcType=BIGINT},
+      create_user_community_type = #{createUserCommunityType,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
